@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <style>
+        #my-canvas {
+            border: 1px black;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="my-canvas">
+
+    </canvas>
+    <script>
+        let myCanvas = document.getElementById('my-canvas');
+        let ctx = myCanvas.getContext('2d');
+        ctx.fillStyle = 'rgb(200,0,0)';
+        ctx.fillRect = 10, 5, 75, 75;
+        ctx.fillStyle = 'rgb(0,200,0,0.5)';
+        ctx.fillRect = 47, 42, 75, 75;
+    </script>
+</body>
+
+</html>
