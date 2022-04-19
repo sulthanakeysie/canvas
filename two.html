@@ -16,16 +16,17 @@
         let x = 10;
         let y = 21;
         function sleep(t) {
-            return new Promise(resolve, () => setTimeout(resolve, t))
+            return new Promise((resolve) => setTimeout(resolve, t))
         }
         for (let i = 0; i < 20; i++) {
             ctx.moveTo(x, y)
             let x1 = x + 11;
             let y1 = y + 32;
             ctx.lineTo(x1, y1)
+            ctx.stroke()
             sleep(1000)
+            x = x1; y = y1;
         }
-        ctx.stroke()
     </script>
 </body>
 
