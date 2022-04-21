@@ -1,0 +1,46 @@
+<html>
+
+<head></head>
+
+<body>
+    <canvas id="my-canvas">
+        <script>
+            let myCanvas = document.getElementById('my-canvas')
+            let ctx = myCanvas.getContext('2d')
+            let height = window.innerHeight
+            let width = window.innerWidth
+            myCanvas.width = width;
+            myCanvas.height = height;
+            // todo :  change the bg color of myCanvas
+            function sleep(t) {
+                return new Promise((resolve) => setTimeout(resolve, t))
+            }
+            function drawCircle(x, y, r, fillStyle, strokeStyle) {
+                // let x = myCanvas.width / 2, y = myCanvas.height / 2;
+                // let color = 'rgb(255,0,0)'
+                ctx.beginPath();
+                ctx.arc(x, y, r, Math.PI * 2, false)
+                ctx.fillStyle = fillStyle
+                ctx.strokeStyle = strokeStyle
+                ctx.fill()
+                ctx.stroke()
+            }
+            for (let i = 0; i < 5; i++) {
+                sleep(i * 1000)
+                if (i % 2 == 0) {
+                    console.log('i is even')
+                    drawCircle(myCanvas.width / 2, myCanvas.height / 2, 50, 'rgb(255,0,0)', 'rgb(0,0,255)')
+                }
+                else {
+                    console.log('is odd')
+                    drawCircle(myCanvas.width / 2, myCanvas.height / 2, 50, 'rgb(0,0,255)', 'rgb(255,0,0)',)
+
+                }
+
+
+            }
+        </script>
+    </canvas>
+</body>
+
+</html>
